@@ -2,17 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Starfield : MonoBehaviour
+public class Starfield: MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        
+        collision.gameObject.GetComponent<Xwing>().speed = 4;
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnTriggerExit2D(Collider2D collision)
     {
-        
+        collision.gameObject.GetComponent<Xwing>().speed = 2;
     }
 }
